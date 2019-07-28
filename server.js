@@ -33,13 +33,6 @@ app.get('/messages', (req, res) => {
   defers.push({req, res});
 });
 
-app.get('/test', (req, res) => {
-  setTimeout(() => {
-    res.json({'hello': 'world'});
-  }, 1000);
-  
-})
-
 app.use(express.static('public'));
 
 setInterval(() => {
