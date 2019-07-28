@@ -12,7 +12,7 @@ const messages = [
 
 ];
 
-function resolvePromises() {
+function sendToClients() {
   const pulledMessages = messages.splice(0, messages.length);
   defers.splice(0, defers.length).forEach(defer => {
     defer.res.json(pulledMessages);
@@ -24,7 +24,7 @@ app.use(bodyParser.json());
 app.put('/submit', (req, res) => {
   if (req.body && req.body.text) {
     messages.push(req.body.text);
-    resolvePromises();
+    sendToClients();
   }
   res.json({'ok': true});
 });
@@ -37,7 +37,7 @@ app.use(express.static('public'));
 
 setInterval(() => {
   messages.push(new Date().toTimeString() + ' - Event! --- ' + Math.random().toString(16).slice(2));
-  resolvePromises();
+  sendToClients();
 }, 500);
 
 server.listen(8080, () => console.log(`app listening on http://localhost:8080`));
