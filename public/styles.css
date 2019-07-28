@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  background: #222;
+  color: #fff;
+  margin: 0;
+}
+
+input {
+  background: #111;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #fff;
+  color: #fff;
+  height: auto;
+  width: 50%;
+}
+
+button {
+  font-size: 16px;
+  padding: 8px;
+  background: #070;
+  font-weight: bold;
+  color: #fff;
+  border: 2px solid #fff;
+}
+
+#messages {
+  border: 2px solid #fff;
+  background: #000;
+  color: #0c0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+}
+
+#commandLineForm {
+  display: flex;
+}
+
+#commandLineForm input {
+  display: block;
+  flex: 1;
+}
+
+#commandLineForm button {
+  display: block;
+  flex: 0 1;
+}
+
+main {
+
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  flex: 1 1 auto;
+}
+
